@@ -1,5 +1,5 @@
 :root{
-  /* COLOR SCHEME UPDATED to Orange and Cream White */
+  /* COLOR SCHEME: Orange and Cream White */
   --ekya-blue:#FF6600; /* Primary Orange for Headers/Links/Text */
   --ekya-yellow:#F5B800; /* Brighter Orange/Gold for CTAs */
   --ekya-light:#F8F4E6; /* Cream White Background */
@@ -12,11 +12,12 @@
 *{box-sizing:border-box}
 body{margin:0;color:#0f1724;background:var(--ekya-light);font-family:var(--font-family)}
 .container{max-width:var(--max-width);margin:0 auto;padding:2rem;}
-/* HEADER GRADIENT UPDATED to use Orange */
+/* HEADER GRADIENT */
 .site-header{background:linear-gradient(180deg, rgba(255,102,0,0.95), rgba(255,102,0,0.85));color:#fff;padding-bottom:2rem;padding-top:1rem;}
 .nav{display:flex;align-items:center;justify-content:space-between;}
 .brand .logo{height:44px;}
-.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center;}
+/* NAV LINKS ALIGNMENT (Single Stretch) */
+.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center; flex-wrap: nowrap;}
 .nav-links a{color:#fff;text-decoration:none;font-weight:600;}
 .nav-links .cta{background:var(--ekya-yellow);color:var(--ekya-blue);padding:0.6rem 1rem;border-radius:8px;text-decoration:none;}
 .hero{display:flex;gap:2rem;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem;position:relative;}
@@ -25,11 +26,11 @@ body{margin:0;color:#0f1724;background:var(--ekya-light);font-family:var(--font-
 .lead{font-size:1.05rem;color:#e6f1fb;margin-bottom:1rem;}
 .primary-btn{display:inline-block;background:var(--ekya-yellow);color:var(--ekya-blue);padding:.8rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:700;}
 .hero-image{flex:1;height:260px;border-radius:14px;
-/* HERO IMAGE LINK UPDATED */
-background-image:url('https://drive.google.com/uc?export=view&id=1eTpLXJ1BoRTOcxWnG75eMm0y7HUpBlzr');
+/* HERO IMAGE LINK UPDATED to GitHub Raw URL */
+background-image:url('https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/5cdb81d69b9f11e0bf4ea305c43fe42151f6e63f/kenny-eliason-zFSo6bnZJTw-unsplash.jpg');
 background-size:cover;background-position:center;filter:brightness(.95);box-shadow:0 8px 30px rgba(2,6,23,0.25);}
 
-/* NEW SCROLL BUTTON STYLING */
+/* SCROLL BUTTON STYLING */
 .scroll-nav {
     background: var(--ekya-yellow);
     padding: 0.5rem 0;
@@ -63,6 +64,12 @@ background-size:cover;background-position:center;filter:brightness(.95);box-shad
 
 /* Sections */
 section{padding:3rem 0;}
+/* Ensures the form section is placed flush after the hero */
+.form-placement {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: var(--ekya-light); /* Ensure it stands out if adjacent sections change background */
+}
 .about-section .grid,.curriculum .grid,.testimonials .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:center;}
 .image-card img{width:100%;border-radius:10px;}
 .highlights{padding-left:1rem;color:var(--muted);}
@@ -70,24 +77,52 @@ section{padding:3rem 0;}
 .card{background:var(--card-bg);border-radius:var(--radius);padding:1.25rem;box-shadow:0 6px 20px rgba(9,30,66,0.06);}
 .small{padding:1rem;}
 .testimonials .three{grid-template-columns:repeat(3,1fr);}
-/* TESTIMONIAL BORDERS ADDED */
+/* TESTIMONIAL BORDERS FIXED (Vertical Format) */
 .testimonials .card.quote {
-    border-left: 5px solid var(--ekya-blue); /* Left border for accent */
-    border-bottom: 2px solid var(--ekya-yellow); /* Bottom border for highlight */
+    border-left: 5px solid var(--ekya-blue); /* Strong vertical border */
+    border-bottom: none; /* Removed horizontal border */
     transition: transform 0.3s;
+    padding-left: 1.5rem; /* Add space for the vertical border */
 }
 .testimonials .card.quote:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255,102,0,0.2);
 }
-.quote{font-style:italic; /* Changed from normal to italic for better testimonial look */
-    color:#333; /* Darker text for readability */
+.quote{font-style:italic; 
+    color:#333; 
 }
 
 .faqs .faq-list details{background:#fff;padding:1rem;border-radius:8px;margin-bottom:.8rem;box-shadow:0 6px 20px rgba(9,30,66,0.04);}
 .contact-section{display:flex;justify-content:center;}
 .cta-card{max-width:720px;text-align:center;padding:2rem;}
 .primary-btn.large{padding:1rem 1.6rem;font-size:1.05rem;border-radius:10px;}
+
+/* FORM STYLING */
+.form-card {
+    padding: 2.5rem;
+    max-width: 600px;
+}
+.admissions-form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.admissions-form input, .admissions-form select, .admissions-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+.admissions-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.admissions-form button[type="submit"] {
+    width: 100%;
+    cursor: pointer;
+}
 
 /* Footer */
 .site-footer{background:#fff;padding:1.2rem 0;border-top:1px solid #eef2f7;}
@@ -96,12 +131,27 @@ section{padding:3rem 0;}
 /* Responsive */
 @media (max-width:900px){
   .about-section .grid,.curriculum .grid{grid-template-columns:1fr; }
-  .nav-links{display:none;}
-  .hero{flex-direction:column;text-align:left;}
-  .hero-image{width:100%;height:220px;margin-top:1rem;}
-  .testimonials .three{grid-template-columns:1fr;}
-  .curriculum .three{grid-template-columns:1fr;}
-  .footer-inner{flex-direction:column;gap:.6rem;text-align:center;}
+  .nav-links{
+      /* Ensure CTAs are always visible on smaller screens */
+      display: flex; 
+      justify-content: flex-end;
+      width: 100%;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+  }
+  .nav-links li:not(.cta) {
+      /* Hide regular nav items, which are redundant with scroll buttons */
+      display: none; 
+  }
+  .nav-links .cta {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+      margin: 0.2rem 0;
+  }
+  .nav {
+      flex-direction: row; /* Keep the logo and CTAs in a row */
+      align-items: center;
+  }
   .button-group {
       gap: 0.5rem;
       padding: 0.5rem;
