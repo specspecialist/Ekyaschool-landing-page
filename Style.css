@@ -3,7 +3,7 @@
   --ekya-blue:#FF6600; /* Primary Orange for Headers/Links/Text */
   --ekya-yellow:#F5B800; /* Brighter Orange/Gold for CTAs */
   --ekya-light:#F8F4E6; /* Cream White Background */
-  --max-width:1400px;
+  --max-width:1400px; /* EXPANDED MAX WIDTH for Acharya look */
   --radius:12px;
   --card-bg: #FFFFFF; /* Pure White for Card Backgrounds */
   --muted:#6b7280;
@@ -13,19 +13,16 @@
 body{margin:0;color:#0f1724;background:var(--ekya-light);font-family:var(--font-family)}
 .container{max-width:var(--max-width);margin:0 auto;padding:2rem;}
 
-/* HEADER GRADIENT (Uses Orange) */
+/* HEADER & HERO */
 .site-header{background:linear-gradient(180deg, rgba(255,102,0,0.95), rgba(255,102,0,0.85));color:#fff;padding-bottom:2rem;padding-top:1rem;}
 .nav{display:flex;align-items:center;justify-content:space-between;}
-
-/* LOGO HYPERLINK & EFFECT */
 .brand {cursor: pointer;}
 .logo-link {display: inline-block;}
 .brand .logo{height:44px;transition: transform 0.1s;object-fit: contain;}
 .logo-link:active .logo {transform: scale(0.98);}
-
-/* CTAs use Orange and Bright Orange */
+.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center; flex-wrap: nowrap;}
+.nav-links a{color:#fff;text-decoration:none;font-weight:600;}
 .nav-links .cta{background:var(--ekya-yellow);color:var(--ekya-blue);padding:0.6rem 1rem;border-radius:8px;text-decoration:none;}
-
 .hero{display:flex;gap:2rem;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem;position:relative;}
 .hero-inner{flex:1;z-index:2;padding-right:1rem;}
 .hero h1{font-size:2.8rem;margin:0 0 .6rem;font-weight:700;}
@@ -39,15 +36,20 @@ background-size:cover;background-position:center;filter:brightness(.95);box-shad
 /* CAROUSEL STYLING */
 .carousel-section {padding: 0;max-width: 100%;}
 .carousel-slide img {width: 100%;height: 400px;object-fit: cover;}
-.carousel-btn {background: rgba(255, 102, 0, 0.7);color: white; /* Uses Orange */
-}
+.carousel-btn {position: absolute;top: 50%;transform: translateY(-50%);background: rgba(255, 102, 0, 0.7);color: white;border: none;padding: 1rem;cursor: pointer;z-index: 10;transition: background 0.3s;}
+.carousel-btn:hover {background: rgba(255, 102, 0, 0.9);}
+.carousel-btn.prev {left: 1rem;}
+.carousel-btn.next {right: 1rem;}
+.carousel-dots {position: absolute;bottom: 1rem;left: 50%;transform: translateX(-50%);display: flex;gap: 0.5rem;z-index: 10;}
+.dot {height: 10px;width: 10px;background-color: rgba(255, 255, 255, 0.6);border-radius: 50%;cursor: pointer;transition: background-color 0.3s;}
 .dot.active {background-color: var(--ekya-yellow);border: 2px solid var(--ekya-blue);}
 
-/* SCROLL BUTTON STYLING: Uses Orange and Bright Orange */
+
+/* SCROLL BUTTONS */
 .scroll-nav {background: var(--ekya-yellow);padding: 0.5rem 0;box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
 .button-group {display: flex;justify-content: center;gap: 1rem;flex-wrap: wrap;padding: 0.5rem 2rem;}
-.scroll-btn {background: var(--ekya-blue); /* Orange background */
-    color: #fff;border: none;padding: 0.6rem 1rem;border-radius: 8px;font-weight: 600;cursor: pointer;transition: background 0.3s, transform 0.1s;display: flex;align-items: center;gap: 0.5rem;}
+.scroll-btn {background: var(--ekya-blue);color: #fff;border: none;padding: 0.6rem 1rem;border-radius: 8px;font-weight: 600;cursor: pointer;transition: background 0.3s, transform 0.1s;display: flex;align-items: center;gap: 0.5rem;}
+.scroll-btn:hover {background: #e65c00;transform: translateY(-1px);}
 
 
 /* MAIN SECTIONS */
@@ -61,6 +63,7 @@ section{padding:4rem 0;}
     gap: 3rem; 
     align-items: start;
 }
+.image-card img{width:100%;max-height: 400px;border-radius:10px;object-fit: cover;}
 
 /* STICKY FORM WRAPPER */
 .sticky-form-wrapper {
@@ -69,19 +72,32 @@ section{padding:4rem 0;}
     padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
 }
+.form-card {max-width: none;text-align: left;}
 
-/* TESTIMONIALS: Uses Orange */
+/* TESTIMONIALS */
 .testimonials .card.quote {
-    border-left: 5px solid var(--ekya-blue); /* Orange vertical border */
+    border-left: 5px solid var(--ekya-blue); 
     padding-left: 1.5rem;
     min-width: 320px; 
-    /* Orange outline and drop shadow */
     box-shadow: 0 0 0 1px rgba(255, 102, 0, 0.4), 0 4px 15px rgba(0, 0, 0, 0.18); 
 }
+.testimonials .card.quote:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 2px var(--ekya-blue), 0 8px 25px rgba(255,102,0,0.25); 
+}
 
-/* FORM STYLING (Optimized for all devices) */
-.admissions-form {gap: 0.75rem;}
-.admissions-form input, .admissions-form select, .admissions-form textarea {padding: 1rem;box-sizing: border-box;}
+/* FORM STYLING (Optimized) */
+.admissions-form {display: grid;gap: 0.75rem;margin-top: 1.5rem;}
+.admissions-form input, .admissions-form select, .admissions-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+.admissions-form textarea {resize: vertical;min-height: 100px;}
+.admissions-form button[type="submit"] {width: 100%;cursor: pointer;margin-top: 1rem;}
 
 /* Footer styles remain the same */
 
@@ -91,14 +107,27 @@ section{padding:4rem 0;}
     .about-form-grid {grid-template-columns: 1.5fr 1fr;}
 }
 @media (max-width:900px){
-    /* Disables grid/sticky on mobile, stacks everything, uses cream white background */
+    /* Full Mobile Optimization */
+    .container { padding: 1rem;}
+    .carousel-slide img {height: 250px;} 
+
+    /* Stacks the About section content and form */
     .about-form-grid {grid-template-columns: 1fr;gap: 2rem;}
-    .sticky-form-wrapper {position: relative;top: 0;order: -1;}
+    .sticky-form-wrapper {position: relative;top: 0;order: -1;} /* Form appears first on mobile */
+    
+    /* Responsive Grids */
+    .curriculum .three{grid-template-columns: 1fr;}
+    .about-section .grid {grid-template-columns: 1fr;}
+
     .hero h1{font-size:2.2rem;}
     .hero-image{height:250px;}
-    .testimonials .card.quote {min-width: 85vw;}
+
+    /* Testimonials */
+    .testimonials .card.quote {min-width: 85vw; /* Allows horizontal scroll to work effectively */
+    }
     .desktop-only {display: none;}
 }
 @media (max-width:600px){
-    .container{padding: 1rem;}
-}
+    .button-group {gap: 0.5rem;padding: 0.5rem;}
+    .scroll-btn {flex: 1 1 auto;font-size: 0.9rem;padding: 0.5rem;}
+  }
