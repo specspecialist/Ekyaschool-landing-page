@@ -27,6 +27,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#campuses">Campuses</a></li>
           <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -36,7 +37,7 @@
 
   <!-- Carousel Banner -->
   <section class="banner">
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper bannerSwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/9eedb5eff7edc16dfe4457754c6d299d4da8babf/ahmad-faiz--94J40EeRXw-unsplash.jpg?raw=true" alt="Ekya Banner 1"></div>
         <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/9eedb5eff7edc16dfe4457754c6d299d4da8babf/kenny-eliason-zFSo6bnZJTw-unsplash.jpg?raw=true" alt="Ekya Banner 2"></div>
@@ -76,22 +77,46 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2>What Parents Say</h2>
+      <div class="swiper testimonialSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide testimonial-card">
+            <p>"Ekya has transformed my child’s learning journey. The teachers are warm, and the approach is very student-centered."</p>
+            <h4>— Priya Sharma</h4>
+          </div>
+          <div class="swiper-slide testimonial-card">
+            <p>"A perfect blend of academics and creativity! My son enjoys going to school every day."</p>
+            <h4>— Arjun Rao</h4>
+          </div>
+          <div class="swiper-slide testimonial-card">
+            <p>"Their Cambridge curriculum has opened global opportunities for our daughter. Highly recommend Ekya!"</p>
+            <h4>— Neha Patel</h4>
+          </div>
+        </div>
+        <div class="swiper-pagination orange-pagination"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq" class="faq-section">
     <div class="container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq">
         <div class="faq-item">
-          <h3>What curricula do you offer?</h3>
-          <p>Ekya offers CBSE, ICSE, and Cambridge IGCSE programs designed for holistic development.</p>
+          <button class="faq-question">What curricula do you offer?</button>
+          <div class="faq-answer"><p>Ekya offers CBSE, ICSE, and Cambridge IGCSE programs designed for holistic development.</p></div>
         </div>
         <div class="faq-item">
-          <h3>Where are your campuses located?</h3>
-          <p>We have five campuses across JP Nagar, ITPL, Byrathi, BTM Layout, and Electronic City.</p>
+          <button class="faq-question">Where are your campuses located?</button>
+          <div class="faq-answer"><p>We have five campuses across JP Nagar, ITPL, Byrathi, BTM Layout, and Electronic City.</p></div>
         </div>
         <div class="faq-item">
-          <h3>How can I apply for admission?</h3>
-          <p>Fill out our online admission form below or contact our academic counselors for guidance.</p>
+          <button class="faq-question">How can I apply for admission?</button>
+          <div class="faq-answer"><p>Fill out our online admission form below or contact our academic counselors for guidance.</p></div>
         </div>
       </div>
     </div>
@@ -102,14 +127,17 @@
     <div class="container">
       <h2>Get in Touch</h2>
       <form class="contact-form" action="#" method="post">
-        <div class="form-group">
-          <input type="text" placeholder="Full Name" required>
-          <input type="email" placeholder="Email" required>
-        </div>
-        <div class="form-group">
-          <input type="text" placeholder="Phone Number" required>
-          <input type="text" placeholder="Preferred Campus">
-        </div>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Phone Number" required>
+        <select required>
+          <option value="">Select Campus</option>
+          <option>JP Nagar</option>
+          <option>ITPL</option>
+          <option>Byrathi</option>
+          <option>BTM Layout</option>
+          <option>Electronic City</option>
+        </select>
         <textarea rows="4" placeholder="Message"></textarea>
         <button type="submit" class="btn-primary">Submit</button>
       </form>
@@ -126,7 +154,8 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    var swiper = new Swiper(".mySwiper", {
+    // Banner Swiper
+    var swiper1 = new Swiper(".bannerSwiper", {
       loop: true,
       pagination: {
         el: ".swiper-pagination",
@@ -136,6 +165,33 @@
         delay: 3000,
         disableOnInteraction: false,
       },
+    });
+
+    // Testimonials Swiper
+    var swiper2 = new Swiper(".testimonialSwiper", {
+      loop: true,
+      pagination: {
+        el: ".orange-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // FAQ Accordion
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        q.classList.toggle("active");
+        const answer = q.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
     });
   </script>
 </body>
