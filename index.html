@@ -14,7 +14,7 @@
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <div class="brand">
+      <div class="brand logo-reload">
         <img src="https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/5cdb81d69b9f11e0bf4ea305c43fe42151f6e63f/images%20(7).jpeg" alt="Ekya Schools logo" class="logo">
       </div>
       <ul class="nav-links">
@@ -28,20 +28,43 @@
         <h1>Where Learning Comes Alive</h1>
         <p class="lead">A progressive K-12 school network blending inquiry-led learning with character development and creative exploration.</p>
         <a class="primary-btn" href="#admissions-form">Apply Now</a>
-        <div class="hero-credits">Hero image sourced from Unsplash</div>
       </div>
       <div class="hero-image" aria-hidden="true"></div>
     </section>
-
-    <div class="scroll-nav">
-        <div class="container button-group">
-            <button class="scroll-btn" data-target="#about"><i class="fas fa-school"></i> About</button>
-            <button class="scroll-btn" data-target="#curriculum"><i class="fas fa-book-reader"></i> Curriculum</button>
-            <button class="scroll-btn" data-target="#testimonials"><i class="fas fa-comments"></i> Testimonials</button>
-            <button class="scroll-btn" data-target="#faqs"><i class="fas fa-question-circle"></i> FAQs</button>
-        </div>
-    </div>
   </header>
+
+  <section id="image-carousel" class="carousel-section">
+      <div class="carousel-container">
+          <div class="carousel-track">
+              <div class="carousel-slide">
+                  <img src="https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/db63056c6839f078ba280b394474807abb7a1eca/mira-kireeva-2Fsc8ICRGbM-unsplash.jpg" alt="Campus Life 1" />
+              </div>
+              <div class="carousel-slide">
+                  <img src="https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/db63056c6839f078ba280b394474807abb7a1eca/taylor-flowe-4nKOEAQaTgA-unsplash.jpg" alt="Campus Life 2" />
+              </div>
+              <div class="carousel-slide">
+                  <img src="https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/db63056c6839f078ba280b394474807abb7a1eca/kenny-eliason-zFSo6bnZJTw-unsplash.jpg" alt="Campus Life 3" />
+              </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+          </div>
+      </div>
+  </section>
+
+  <div class="scroll-nav">
+      <div class="container button-group">
+          <button class="scroll-btn" data-target="#admissions-form"><i class="fas fa-file-alt"></i> Apply</button>
+          <button class="scroll-btn" data-target="#about"><i class="fas fa-school"></i> About</button>
+          <button class="scroll-btn" data-target="#curriculum"><i class="fas fa-book-reader"></i> Curriculum</button>
+          <button class="scroll-btn" data-target="#testimonials"><i class="fas fa-comments"></i> Testimonials</button>
+          <button class="scroll-btn" data-target="#faqs"><i class="fas fa-question-circle"></i> FAQs</button>
+      </div>
+  </div>
 
   <main>
     <section id="admissions-form" class="container contact-section form-placement">
@@ -77,7 +100,7 @@
           </ul>
         </div>
         <div class="card image-card">
-          <img src="https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/5cdb81d69b9f11e0bf4ea305c43fe42151f6e63f/kenny-eliason-zFSo6bnZJTw-unsplash.jpg" alt="Students learning" />
+          <img src="https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/db63056c6839f078ba280b394474807abb7a1eca/kenny-eliason-zFSo6bnZJTw-unsplash.jpg" alt="Students learning" />
         </div>
       </div>
     </section>
@@ -102,18 +125,31 @@
     </section>
 
     <section id="testimonials" class="container testimonials">
-      <h2>What Parents & Students Say</h2>
-      <div class="grid three">
-        <div class="card quote">
-          <p>"Ekya's personalised attention helped my child develop confidence and curiosity. The teachers truly care."<br/><strong>- Ananya Sharma, Parent</strong></p>
+        <div class="testimonial-header">
+            <h2>What Parents & Students Say</h2>
+            <div class="scroll-controls">
+                <button class="testimonial-scroll-btn prev" data-scroll="-1"><i class="fas fa-chevron-left"></i></button>
+                <button class="testimonial-scroll-btn next" data-scroll="1"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
-        <div class="card quote">
-          <p>"The project-based approach made learning fun. I loved presenting my science project to the whole school!"<br/><strong>- Rohan Mehta, Student (Grade 7)</strong></p>
+        <div class="testimonials-scroll-wrapper">
+          <div class="grid three testimonials-content">
+            <div class="card quote">
+              <p>"Ekya's personalised attention helped my child develop confidence and curiosity. The teachers truly care."<br/><strong>- Ananya Sharma, Parent</strong></p>
+            </div>
+            <div class="card quote">
+              <p>"The project-based approach made learning fun. I loved presenting my science project to the whole school!"<br/><strong>- Rohan Mehta, Student (Grade 7)</strong></p>
+            </div>
+            <div class="card quote">
+              <p>"From sports to arts, Ekya gave my daughter the space to explore her strengths."<br/><strong>- Meera Iyer, Parent</strong></p>
+             <div class="card quote desktop-only">
+              <p>"The personalized attention here is unmatched. It truly is learning that comes alive."<br/><strong>- Rajesh Menon, Parent</strong></p>
+            </div>
+            <div class="card quote desktop-only">
+              <p>"I feel prepared for college thanks to the career guidance and strong curriculum."<br/><strong>- Priya Singh, Student (Grade 12)</strong></p>
+            </div>
+          </div>
         </div>
-        <div class="card quote">
-          <p>"From sports to arts, Ekya gave my daughter the space to explore her strengths."<br/><strong>- Meera Iyer, Parent</strong></p>
-        </div>
-      </div>
     </section>
 
     <section id="faqs" class="container faqs">
@@ -157,6 +193,12 @@
   </footer>
 
   <script>
+    // Logo reload on click
+    document.querySelector('.logo-reload').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.reload();
+    });
+
     // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -176,6 +218,61 @@
             }
         });
     });
+
+    // Testimonial horizontal scroll functionality
+    document.querySelectorAll('.testimonial-scroll-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const wrapper = document.querySelector('.testimonials-scroll-wrapper');
+            const direction = parseInt(this.getAttribute('data-scroll'));
+            // Get the width of one card plus its gap
+            const cardElement = document.querySelector('.testimonials-content .card');
+            const cardWidth = cardElement ? cardElement.offsetWidth : 300; 
+            const gap = 20; 
+            const scrollDistance = (cardWidth + gap) * direction;
+
+            wrapper.scrollBy({
+                left: scrollDistance,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // NEW CAROUSEL SCRIPT
+    let currentSlide = 0;
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+        const offset = currentSlide * -100;
+        track.style.transform = `translateX(${offset}%)`;
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function moveSlide(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    document.querySelector('.carousel-btn.next').addEventListener('click', () => moveSlide(1));
+    document.querySelector('.carousel-btn.prev').addEventListener('click', () => moveSlide(-1));
+    
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            currentSlide = parseInt(e.target.dataset.slide);
+            updateCarousel();
+        });
+    });
+
+    // Optional: Auto-advance carousel
+    // setInterval(() => moveSlide(1), 5000); 
+
+    // Initial update
+    updateCarousel(); 
   </script>
 </body>
 </html>
