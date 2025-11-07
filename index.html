@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ekya Schools — Where Learning Comes Alive</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <link rel="icon" href="https://drive.google.com/uc?export=view&id=1vcwxaUAKKrSHN8lf7CWt-zj5Rt8DoLaK" type="image/png" />
   <link rel="stylesheet" href="style.css">
   -->
@@ -20,7 +22,8 @@
         <li><a href="#curriculum">Curriculum</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#faqs">FAQs</a></li>
-        <li><a class="cta" href="https://ekyaschools.com/contact/">Contact Admissions</a></li>
+        <li><a class="cta enquire-cta" href="#admissions-form">Enquire Now</a></li>
+        <li><a class="cta apply-cta" href="#admissions-form">Apply Now</a></li>
       </ul>
     </nav>
 
@@ -28,11 +31,20 @@
       <div class="hero-inner">
         <h1>Where Learning Comes Alive</h1>
         <p class="lead">A progressive K-12 school network blending inquiry-led learning with character development and creative exploration.</p>
-        <a class="primary-btn" href="https://ekyaschools.com/contact/">Contact Admissions</a>
+        <a class="primary-btn" href="https://ekyaschools.com/admission/">Apply Now</a>
         <div class="hero-credits">Hero image sourced from Unsplash</div>
       </div>
       <div class="hero-image" aria-hidden="true"></div>
     </section>
+
+    <div class="scroll-nav">
+        <div class="container button-group">
+            <button class="scroll-btn" data-target="#about"><i class="fas fa-school"></i> About</button>
+            <button class="scroll-btn" data-target="#curriculum"><i class="fas fa-book-reader"></i> Curriculum</button>
+            <button class="scroll-btn" data-target="#testimonials"><i class="fas fa-comments"></i> Testimonials</button>
+            <button class="scroll-btn" data-target="#faqs"><i class="fas fa-question-circle"></i> FAQs</button>
+        </div>
+    </div>
   </header>
 
   <main>
@@ -92,60 +104,4 @@
       <div class="faq-list">
         <details open>
           <summary>What curricula are offered at Ekya?</summary>
-          <p>Different campuses offer CBSE, ICSE and IGCSE. Please check the specific campus page or contact admissions for exact offerings.</p>
-        </details>
-
-        <details>
-          <summary>Where are Ekya campuses located?</summary>
-          <p>Ekya has campuses in BTM Layout, JP Nagar, ITPL, Byrathi, and NICE Road (Bengaluru). Visit the campuses page for addresses and contact numbers.</p>
-        </details>
-
-        <details>
-          <summary>What age groups do you accept?</summary>
-          <p>Ekya accepts children from Early Years (ages 3+) through Grade 12. Specific intake ages vary by program and campus.</p>
-        </details>
-
-        <details>
-          <summary>How can parents apply?</summary>
-          <p>Admissions details and application forms are available on the official Ekya contact page. We recommend scheduling a campus visit or counselling session.</p>
-        </details>
-
-        <details>
-          <summary>Does Ekya offer extracurricular activities?</summary>
-          <p>Yes — arts, music, sports, design thinking labs and community programs are part of the holistic curriculum.</p>
-        </details>
-      </div>
-    </section>
-
-    <section id="contact" class="container contact-section">
-      <div class="card cta-card">
-        <h2>Ready to Learn More?</h2>
-        <p>Schedule a visit or get in touch with admissions.</p>
-        <a class="primary-btn large" href="https://ekyaschools.com/contact/">Contact Admissions</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© 2025 Ekya Schools | All Rights Reserved</div>
-      <div class="socials">
-        <a href="https://www.facebook.com/ekyaschools" target="_blank" rel="noopener">Facebook</a> ·
-        <a href="https://www.instagram.com/ekyaschools" target="_blank" rel="noopener">Instagram</a> ·
-        <a href="https://www.youtube.com/ekyaschools" target="_blank" rel="noopener">YouTube</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  </script>
-</body>
-</html>
+          
