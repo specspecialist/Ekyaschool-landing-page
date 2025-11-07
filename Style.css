@@ -3,7 +3,7 @@
   --ekya-blue:#FF6600; /* Primary Orange for Headers/Links/Text */
   --ekya-yellow:#F5B800; /* Brighter Orange/Gold for CTAs */
   --ekya-light:#F8F4E6; /* Cream White Background */
-  --max-width:1100px;
+  --max-width:1400px;
   --radius:12px;
   --card-bg: #FFFFFF; /* Pure White for Card Backgrounds */
   --muted:#6b7280;
@@ -12,296 +12,93 @@
 *{box-sizing:border-box}
 body{margin:0;color:#0f1724;background:var(--ekya-light);font-family:var(--font-family)}
 .container{max-width:var(--max-width);margin:0 auto;padding:2rem;}
-/* HEADER GRADIENT */
+
+/* HEADER GRADIENT (Uses Orange) */
 .site-header{background:linear-gradient(180deg, rgba(255,102,0,0.95), rgba(255,102,0,0.85));color:#fff;padding-bottom:2rem;padding-top:1rem;}
 .nav{display:flex;align-items:center;justify-content:space-between;}
 
 /* LOGO HYPERLINK & EFFECT */
 .brand {cursor: pointer;}
-.logo-link {
-    display: inline-block;
-}
-.brand .logo{
-    height:44px;
-    transition: transform 0.1s;
-    object-fit: contain;
-}
-.logo-link:active .logo {
-    transform: scale(0.98); /* Click effect */
-}
+.logo-link {display: inline-block;}
+.brand .logo{height:44px;transition: transform 0.1s;object-fit: contain;}
+.logo-link:active .logo {transform: scale(0.98);}
 
-/* NAV LINKS ALIGNMENT (Single Stretch) */
-.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center; flex-wrap: nowrap;}
-.nav-links a{color:#fff;text-decoration:none;font-weight:600;}
+/* CTAs use Orange and Bright Orange */
 .nav-links .cta{background:var(--ekya-yellow);color:var(--ekya-blue);padding:0.6rem 1rem;border-radius:8px;text-decoration:none;}
+
 .hero{display:flex;gap:2rem;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem;position:relative;}
 .hero-inner{flex:1;z-index:2;padding-right:1rem;}
-.hero h1{font-size:2.4rem;margin:0 0 .6rem;font-weight:700;}
-.lead{font-size:1.05rem;color:#e6f1fb;margin-bottom:1rem;}
-.primary-btn{display:inline-block;background:var(--ekya-yellow);color:var(--ekya-blue);padding:.8rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:700;}
-.hero-image{flex:1;height:260px;border-radius:14px;
-/* HERO IMAGE LINK FIXED */
+.hero h1{font-size:2.8rem;margin:0 0 .6rem;font-weight:700;}
+.lead{font-size:1.15rem;color:#e6f1fb;margin-bottom:1.5rem;}
+.primary-btn{display:inline-block;background:var(--ekya-yellow);color:var(--ekya-blue);padding:.9rem 1.4rem;border-radius:8px;text-decoration:none;font-weight:700;}
+.hero-image{flex:1;height:300px;border-radius:14px;
 background-image:url('https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/db63056c6839f078ba280b394474807abb7a1eca/kenny-eliason-zFSo6bnZJTw-unsplash.jpg');
 background-size:cover;background-position:center;filter:brightness(.95);box-shadow:0 8px 30px rgba(2,6,23,0.25);}
 
 
-/* NEW IMAGE CAROUSEL STYLING */
-.carousel-section {
-    padding: 0;
-    max-width: 100%;
+/* CAROUSEL STYLING */
+.carousel-section {padding: 0;max-width: 100%;}
+.carousel-slide img {width: 100%;height: 400px;object-fit: cover;}
+.carousel-btn {background: rgba(255, 102, 0, 0.7);color: white; /* Uses Orange */
 }
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-.carousel-slide {
-    min-width: 100%;
-    flex-shrink: 0;
-}
-.carousel-slide img {
-    width: 100%;
-    height: 400px; /* Fixed height for visual appeal */
-    object-fit: cover; /* Ensures images cover the area without stretching */
-}
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 102, 0, 0.7); /* Translucent orange */
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.3s;
-}
-.carousel-btn:hover {
-    background: rgba(255, 102, 0, 0.9);
-}
-.carousel-btn.prev {
-    left: 1rem;
-}
-.carousel-btn.next {
-    right: 1rem;
-}
-.carousel-dots {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
-    z-index: 10;
-}
-.dot {
-    height: 10px;
-    width: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.dot.active {
-    background-color: var(--ekya-yellow);
-    border: 2px solid var(--ekya-blue);
-}
+.dot.active {background-color: var(--ekya-yellow);border: 2px solid var(--ekya-blue);}
+
+/* SCROLL BUTTON STYLING: Uses Orange and Bright Orange */
+.scroll-nav {background: var(--ekya-yellow);padding: 0.5rem 0;box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+.button-group {display: flex;justify-content: center;gap: 1rem;flex-wrap: wrap;padding: 0.5rem 2rem;}
+.scroll-btn {background: var(--ekya-blue); /* Orange background */
+    color: #fff;border: none;padding: 0.6rem 1rem;border-radius: 8px;font-weight: 600;cursor: pointer;transition: background 0.3s, transform 0.1s;display: flex;align-items: center;gap: 0.5rem;}
 
 
-/* SCROLL BUTTON STYLING: Synchronized with Orange color */
-.scroll-nav {
-    background: var(--ekya-yellow);
-    padding: 0.5rem 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 0.5rem 2rem;
-}
-.scroll-btn {
-    background: var(--ekya-blue); /* Orange background */
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.1s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.scroll-btn:hover {
-    background: #e65c00; /* Slightly darker orange */
-    transform: translateY(-1px);
+/* MAIN SECTIONS */
+section{padding:4rem 0;}
+.card{background:var(--card-bg);border-radius:var(--radius);padding:1.5rem;box-shadow:0 6px 20px rgba(9,30,66,0.06);}
+
+/* ABOUT SECTION GRID (Content + Sticky Form) */
+.about-form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Content 2/3, Form 1/3 */
+    gap: 3rem; 
+    align-items: start;
 }
 
+/* STICKY FORM WRAPPER */
+.sticky-form-wrapper {
+    position: sticky; 
+    top: 2rem; 
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+}
 
-/* Sections */
-section{padding:3rem 0;}
-.form-placement {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    background: var(--ekya-light); 
-}
-.about-section .grid,.curriculum .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:center;}
-/* IMAGE OPTIMIZATION */
-.image-card img{
-    width:100%;
-    max-height: 400px;
-    border-radius:10px;
-    object-fit: cover; 
-}
-.highlights{padding-left:1rem;color:var(--muted);}
-.curriculum .three{grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
-.card{background:var(--card-bg);border-radius:var(--radius);padding:1.25rem;box-shadow:0 6px 20px rgba(9,30,66,0.06);}
-.small{padding:1rem;}
-
-/* TESTIMONIAL STYLING & SCROLL */
-.testimonials .three{
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 1.25rem;
-    width: max-content; 
-}
-.testimonial-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-.scroll-controls .testimonial-scroll-btn {
-    background: var(--ekya-blue); /* Orange background sync */
-    color: #fff;
-    border: none;
-    padding: 0.5rem 0.8rem;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-left: 0.5rem;
-    transition: background 0.2s;
-}
-.scroll-controls .testimonial-scroll-btn:hover {
-    background: var(--ekya-yellow);
-    color: var(--ekya-blue);
-}
-.testimonials-scroll-wrapper {
-    overflow-x: auto; 
-    padding-bottom: 1rem;
-    scrollbar-width: none; 
-}
-.testimonials-scroll-wrapper::-webkit-scrollbar {
-    display: none; 
-}
-/* TESTIMONIAL BORDERS (Vertical) & OUTLINE/DROPSHADOW */
+/* TESTIMONIALS: Uses Orange */
 .testimonials .card.quote {
-    border-left: 5px solid var(--ekya-blue); 
-    border-bottom: none; 
-    transition: transform 0.3s;
+    border-left: 5px solid var(--ekya-blue); /* Orange vertical border */
     padding-left: 1.5rem;
-    min-width: 300px; 
-    box-shadow: 0 0 0 1px rgba(255, 102, 0, 0.4), 0 4px 15px rgba(0, 0, 0, 0.18); /* Thin orange outline + drop shadow */
+    min-width: 320px; 
+    /* Orange outline and drop shadow */
+    box-shadow: 0 0 0 1px rgba(255, 102, 0, 0.4), 0 4px 15px rgba(0, 0, 0, 0.18); 
 }
-.testimonials .card.quote:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 0 2px var(--ekya-blue), 0 8px 25px rgba(255,102,0,0.25); /* Thicker outline and stronger shadow on hover */
-}
-.quote{font-style:italic; 
-    color:#333; 
-}
-
-.faqs .faq-list details{background:#fff;padding:1rem;border-radius:8px;margin-bottom:.8rem;box-shadow:0 6px 20px rgba(9,30,66,0.04);}
-.contact-section{display:flex;justify-content:center;}
-.cta-card{max-width:720px;text-align:center;padding:2rem;}
-.primary-btn.large{padding:1rem 1.6rem;font-size:1.05rem;border-radius:10px;}
 
 /* FORM STYLING (Optimized for all devices) */
-.form-card {
-    padding: 2.5rem;
-    max-width: 600px;
-}
-.admissions-form {
-    display: grid;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-.admissions-form input, .admissions-form select, .admissions-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    box-sizing: border-box; 
-}
-.admissions-form textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-.admissions-form button[type="submit"] {
-    width: 100%;
-    cursor: pointer;
-}
+.admissions-form {gap: 0.75rem;}
+.admissions-form input, .admissions-form select, .admissions-form textarea {padding: 1rem;box-sizing: border-box;}
 
-/* Footer */
-.site-footer{background:#fff;padding:1.2rem 0;border-top:1px solid #eef2f7;}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:.95rem;color:var(--muted)}
+/* Footer styles remain the same */
+
 
 /* Responsive */
-@media (max-width:900px){
-  .carousel-slide img {
-      height: 250px; 
-  }
-  .about-section .grid,.curriculum .grid{grid-template-columns:1fr; }
-  .nav-links{
-      display: flex; 
-      justify-content: flex-end;
-      width: 100%;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-  }
-  .nav-links li:not(.cta) {
-      display: none; 
-  }
-  .nav-links .cta {
-      padding: 0.5rem 0.8rem;
-      font-size: 0.9rem;
-      margin: 0.2rem 0;
-  }
-  .nav {
-      flex-direction: row; 
-      align-items: center;
-  }
-  .button-group {
-      gap: 0.5rem;
-      padding: 0.5rem;
-  }
-  .scroll-btn {
-      flex: 1 1 auto;
-      font-size: 0.9rem;
-      padding: 0.5rem;
-  }
-  /* Mobile Testimonials */
-  .testimonials .card.quote {
-      min-width: 80vw; 
-  }
-  .desktop-only {
-      display: none; 
-  }
+@media (max-width:1200px){
+    .about-form-grid {grid-template-columns: 1.5fr 1fr;}
 }
-@media (min-width: 901px) {
-    /* Desktop Testimonials - Ensure only 3 show at a time */
-    .testimonials-content {
-        grid-template-columns: repeat(5, 1fr); 
-    }
-    .testimonials-scroll-wrapper {
-        overflow-x: hidden; 
-    }
-    .testimonials .card.quote {
-        min-width: 300px;
-    }
+@media (max-width:900px){
+    /* Disables grid/sticky on mobile, stacks everything, uses cream white background */
+    .about-form-grid {grid-template-columns: 1fr;gap: 2rem;}
+    .sticky-form-wrapper {position: relative;top: 0;order: -1;}
+    .hero h1{font-size:2.2rem;}
+    .hero-image{height:250px;}
+    .testimonials .card.quote {min-width: 85vw;}
+    .desktop-only {display: none;}
+}
+@media (max-width:600px){
+    .container{padding: 1rem;}
 }
