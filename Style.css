@@ -130,4 +130,4 @@ section{padding:4rem 0;}
 @media (max-width:600px){
     .button-group {gap: 0.5rem;padding: 0.5rem;}
     .scroll-btn {flex: 1 1 auto;font-size: 0.9rem;padding: 0.5rem;}
-  }
+}
