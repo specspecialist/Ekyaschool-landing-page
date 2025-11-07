@@ -37,11 +37,11 @@
 
   <!-- Carousel Banner -->
   <section class="banner">
-    <div class="swiper mySwiper bannerSwiper">
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/9eedb5eff7edc16dfe4457754c6d299d4da8babf/ahmad-faiz--94J40EeRXw-unsplash.jpg?raw=true" alt="Ekya Banner 1"></div>
-        <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/9eedb5eff7edc16dfe4457754c6d299d4da8babf/kenny-eliason-zFSo6bnZJTw-unsplash.jpg?raw=true" alt="Ekya Banner 2"></div>
-        <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/9eedb5eff7edc16dfe4457754c6d299d4da8babf/mira-kireeva-2Fsc8ICRGbM-unsplash.jpg?raw=true" alt="Ekya Banner 3"></div>
+        <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/main/ahmad-faiz--94J40EeRXw-unsplash.jpg?raw=true" alt="Ekya Banner 1"></div>
+        <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/main/kenny-eliason-zFSo6bnZJTw-unsplash.jpg?raw=true" alt="Ekya Banner 2"></div>
+        <div class="swiper-slide"><img src="https://github.com/specspecialist/Ekyaschool-landing-page/blob/main/mira-kireeva-2Fsc8ICRGbM-unsplash.jpg?raw=true" alt="Ekya Banner 3"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -77,47 +77,45 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonials Slider -->
   <section id="testimonials" class="testimonials-section">
     <div class="container">
       <h2>What Parents Say</h2>
       <div class="swiper testimonialSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide testimonial-card">
-            <p>"Ekya has transformed my child’s learning journey. The teachers are warm, and the approach is very student-centered."</p>
-            <h4>— Priya Sharma</h4>
+            <p>“Ekya has provided my child a holistic education experience. Teachers are extremely supportive.”</p>
+            <h4>- Asha, Parent of Grade 5 Student</h4>
           </div>
           <div class="swiper-slide testimonial-card">
-            <p>"A perfect blend of academics and creativity! My son enjoys going to school every day."</p>
-            <h4>— Arjun Rao</h4>
+            <p>“The curriculum at Ekya encourages curiosity and creativity — our daughter loves going to school every day.”</p>
+            <h4>- Rahul, Parent of Grade 3 Student</h4>
           </div>
           <div class="swiper-slide testimonial-card">
-            <p>"Their Cambridge curriculum has opened global opportunities for our daughter. Highly recommend Ekya!"</p>
-            <h4>— Neha Patel</h4>
+            <p>“The best decision we made for our child. The teaching methods are engaging and world-class.”</p>
+            <h4>- Priya, Parent of Grade 7 Student</h4>
           </div>
         </div>
-        <div class="swiper-pagination orange-pagination"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ Accordion -->
   <section id="faq" class="faq-section">
     <div class="container">
       <h2>Frequently Asked Questions</h2>
-      <div class="faq">
-        <div class="faq-item">
-          <button class="faq-question">What curricula do you offer?</button>
-          <div class="faq-answer"><p>Ekya offers CBSE, ICSE, and Cambridge IGCSE programs designed for holistic development.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Where are your campuses located?</button>
-          <div class="faq-answer"><p>We have five campuses across JP Nagar, ITPL, Byrathi, BTM Layout, and Electronic City.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">How can I apply for admission?</button>
-          <div class="faq-answer"><p>Fill out our online admission form below or contact our academic counselors for guidance.</p></div>
-        </div>
+      <div class="faq-item">
+        <button class="faq-question">What curricula do you offer?</button>
+        <div class="faq-answer"><p>Ekya offers CBSE, ICSE, and Cambridge IGCSE programs designed for holistic development.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Where are your campuses located?</button>
+        <div class="faq-answer"><p>We have five campuses across JP Nagar, ITPL, Byrathi, BTM Layout, and Electronic City.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How can I apply for admission?</button>
+        <div class="faq-answer"><p>Fill out our online admission form below or contact our academic counselors for guidance.</p></div>
       </div>
     </div>
   </section>
@@ -126,18 +124,11 @@
   <section id="contact" class="contact-section">
     <div class="container">
       <h2>Get in Touch</h2>
-      <form class="contact-form" action="#" method="post">
+      <form class="contact-form">
         <input type="text" placeholder="Full Name" required>
         <input type="email" placeholder="Email" required>
         <input type="text" placeholder="Phone Number" required>
-        <select required>
-          <option value="">Select Campus</option>
-          <option>JP Nagar</option>
-          <option>ITPL</option>
-          <option>Byrathi</option>
-          <option>BTM Layout</option>
-          <option>Electronic City</option>
-        </select>
+        <input type="text" placeholder="Preferred Campus">
         <textarea rows="4" placeholder="Message"></textarea>
         <button type="submit" class="btn-primary">Submit</button>
       </form>
@@ -154,45 +145,27 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Banner Swiper
-    var swiper1 = new Swiper(".bannerSwiper", {
+    // Main Banner
+    var swiper = new Swiper(".mySwiper", {
       loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      autoplay: { delay: 3000, disableOnInteraction: false },
     });
 
-    // Testimonials Swiper
-    var swiper2 = new Swiper(".testimonialSwiper", {
+    // Testimonials
+    var testimonialSwiper = new Swiper(".testimonialSwiper", {
       loop: true,
-      pagination: {
-        el: ".orange-pagination",
-        clickable: true,
-      },
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
+      pagination: { el: ".testimonialSwiper .swiper-pagination", clickable: true },
+      autoplay: { delay: 4000, disableOnInteraction: false },
     });
 
     // FAQ Accordion
-    const questions = document.querySelectorAll(".faq-question");
-    questions.forEach(q => {
-      q.addEventListener("click", () => {
-        q.classList.toggle("active");
-        const answer = q.nextElementSibling;
-        if (answer.style.maxHeight) {
-          answer.style.maxHeight = null;
-        } else {
-          answer.style.maxHeight = answer.scrollHeight + "px";
-        }
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        const faq = button.parentElement;
+        faq.classList.toggle("active");
       });
     });
   </script>
 </body>
-</html>
+    </html>
