@@ -16,15 +16,17 @@ body{margin:0;color:#0f1724;background:var(--ekya-light);font-family:var(--font-
 .site-header{background:linear-gradient(180deg, rgba(255,102,0,0.95), rgba(255,102,0,0.85));color:#fff;padding-bottom:2rem;padding-top:1rem;}
 .nav{display:flex;align-items:center;justify-content:space-between;}
 
-/* LOGO OPTIMIZATION */
+/* LOGO HYPERLINK & EFFECT */
 .brand {cursor: pointer;}
+.logo-link {
+    display: inline-block;
+}
 .brand .logo{
     height:44px;
     transition: transform 0.1s;
-    /* Basic image optimization on desktop */
     object-fit: contain;
 }
-.brand.logo-reload:active .logo {
+.logo-link:active .logo {
     transform: scale(0.98); /* Click effect */
 }
 
@@ -38,7 +40,7 @@ body{margin:0;color:#0f1724;background:var(--ekya-light);font-family:var(--font-
 .lead{font-size:1.05rem;color:#e6f1fb;margin-bottom:1rem;}
 .primary-btn{display:inline-block;background:var(--ekya-yellow);color:var(--ekya-blue);padding:.8rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:700;}
 .hero-image{flex:1;height:260px;border-radius:14px;
-/* HERO IMAGE LINK UPDATED */
+/* HERO IMAGE LINK FIXED */
 background-image:url('https://raw.githubusercontent.com/specspecialist/Ekyaschool-landing-page/db63056c6839f078ba280b394474807abb7a1eca/kenny-eliason-zFSo6bnZJTw-unsplash.jpg');
 background-size:cover;background-position:center;filter:brightness(.95);box-shadow:0 8px 30px rgba(2,6,23,0.25);}
 
@@ -196,18 +198,18 @@ section{padding:3rem 0;}
 .testimonials-scroll-wrapper::-webkit-scrollbar {
     display: none; 
 }
-/* TESTIMONIAL BORDERS & DROPSHADOW */
+/* TESTIMONIAL BORDERS (Vertical) & OUTLINE/DROPSHADOW */
 .testimonials .card.quote {
     border-left: 5px solid var(--ekya-blue); 
     border-bottom: none; 
     transition: transform 0.3s;
     padding-left: 1.5rem;
     min-width: 300px; 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); /* Stronger shadow */
+    box-shadow: 0 0 0 1px rgba(255, 102, 0, 0.4), 0 4px 15px rgba(0, 0, 0, 0.18); /* Thin orange outline + drop shadow */
 }
 .testimonials .card.quote:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255,102,0,0.25); 
+    box-shadow: 0 0 0 2px var(--ekya-blue), 0 8px 25px rgba(255,102,0,0.25); /* Thicker outline and stronger shadow on hover */
 }
 .quote{font-style:italic; 
     color:#333; 
@@ -252,7 +254,7 @@ section{padding:3rem 0;}
 /* Responsive */
 @media (max-width:900px){
   .carousel-slide img {
-      height: 250px; /* Reduce carousel height on mobile */
+      height: 250px; 
   }
   .about-section .grid,.curriculum .grid{grid-template-columns:1fr; }
   .nav-links{
