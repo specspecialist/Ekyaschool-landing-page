@@ -74,6 +74,16 @@ section{padding:4rem 0;}
 }
 .form-card {max-width: none;text-align: left;}
 
+/* CURRICULUM FIXES */
+.curriculum .three{grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;}
+.curriculum-card { /* NEW STYLE for consistent alignment and padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem; /* Consistent, larger padding for spacious look */
+}
+
+
 /* TESTIMONIALS */
 .testimonials .card.quote {
     border-left: 5px solid var(--ekya-blue); 
@@ -99,8 +109,6 @@ section{padding:4rem 0;}
 .admissions-form textarea {resize: vertical;min-height: 100px;}
 .admissions-form button[type="submit"] {width: 100%;cursor: pointer;margin-top: 1rem;}
 
-/* Footer styles remain the same */
-
 
 /* Responsive */
 @media (max-width:1200px){
@@ -116,15 +124,14 @@ section{padding:4rem 0;}
     .sticky-form-wrapper {position: relative;top: 0;order: -1;} /* Form appears first on mobile */
     
     /* Responsive Grids */
-    .curriculum .three{grid-template-columns: 1fr;}
+    .curriculum .three{grid-template-columns: 1fr;} /* Curriculum cards stack on mobile */
     .about-section .grid {grid-template-columns: 1fr;}
 
     .hero h1{font-size:2.2rem;}
     .hero-image{height:250px;}
 
     /* Testimonials */
-    .testimonials .card.quote {min-width: 85vw; /* Allows horizontal scroll to work effectively */
-    }
+    .testimonials .card.quote {min-width: 85vw;}
     .desktop-only {display: none;}
 }
 @media (max-width:600px){
